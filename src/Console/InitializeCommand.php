@@ -31,7 +31,7 @@ class InitializeCommand extends Command
         $this->output->writeln('Extracting to ' . storage_path());
         $zip->extractTo(storage_path());
 
-        foreach (config('kubernetes.initialize') as $command) {
+        foreach (config('kubernetes.commands.initialize') as $command) {
             $this->call($command);
         }
     }

@@ -22,7 +22,7 @@ class InstallCommand extends Command
 
     public function handle()
     {
-        foreach (config('kubernetes.install') as $command) {
+        foreach (config('kubernetes.commands.install') as $command) {
             $this->call($command);
         }
     }
