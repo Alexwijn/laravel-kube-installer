@@ -34,5 +34,5 @@ At the moment we support the following command:
 All of the above commands can be customized by publishing the configuration file for this package.
 
 ```shell
-php artisan vendor:publish Alexwijn\KubeInstaller\ServiceProvider
+php artisan vendor:publish --provider=Alexwijn\KubeInstaller\ServiceProvider
 ```
