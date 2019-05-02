@@ -1,0 +1,42 @@
+{
+  "name": "alexwijn/laravel-kube-installer",
+  "description": "Prepares a Laravel application for a Kubernetes deployment.",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alex Wijnholds"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "ext-zip": "*",
+    "php": ">=5.6.0",
+    "illuminate/support": "~4.2|5.*",
+    "illuminate/database": "~4.2|5.*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.0",
+    "orchestra/testbench": "~3.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "Alexwijn\\KubeInstaller\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Alexwijn\\KubeInstaller\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0-dev"
+    },
+    "laravel": {
+      "providers": [
+        "Alexwijn\\KubeInstaller\\ServiceProvider"
+      ]
+    }
+  }
+}
