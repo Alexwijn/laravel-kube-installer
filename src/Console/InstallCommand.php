@@ -6,8 +6,6 @@
 
 namespace Alexwijn\KubeInstaller\Console;
 
-use Illuminate\Console\Command;
-
 /**
  * Alexwijn\KubeInstaller\Console\InstallCommand
  */
@@ -23,7 +21,7 @@ class InstallCommand extends Command
     public function handle()
     {
         foreach (config('kubernetes.commands.install') as $command) {
-            $this->call($command);
+            $this->callExplicit($command);
         }
     }
 }

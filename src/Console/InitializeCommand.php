@@ -6,7 +6,6 @@
 
 namespace Alexwijn\KubeInstaller\Console;
 
-use Illuminate\Console\Command;
 use ZipArchive;
 
 /**
@@ -28,11 +27,11 @@ class InitializeCommand extends Command
             return $this->output->writeln('Unable to open "storage.zip". Did you compile it first?');
         }
 
-        $this->output->writeln('Extracting to ' . storage_path());
+        $this->output->writeln('Restoring storage to ' . storage_path());
         $zip->extractTo(storage_path());
 
         foreach (config('kubernetes.commands.initialize') as $command) {
-            $this->call($command);
+            $this->callExplicit($command);
         }
     }
 }
